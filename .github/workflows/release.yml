@@ -1,0 +1,38 @@
+name: Zip Files on Tag
+
+on:
+  push:
+    tags:
+      - "*"  # Triggers on any tag
+
+jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get Tag Name
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Extract Relevant Release Notes
+        run: |
+          awk "/# Release $TAG_NAME/,/^# Release /{if (!/^# Release / || NR==1) print}" RELEASE_NOTES.md > filtered_release_notes.md
+
+      - name: Create ZIP Archive
+        run: |
+          zip -r release-${TAG_NAME}.zip file1.txt file2.txt folder1/
+
+      - name: Upload ZIP as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ env.TAG_NAME }}
+          path: release-${{ env.TAG_NAME }}.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: Release ${{ env.TAG_NAME }}
+          body_path: filtered_release_notes.md
+          files: release-${{ env.TAG_NAME }}.zip
