@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="craimasjiens_mod_pack" version="1"
+    xmlns="ModInfo">
+    <Properties>
+        <Name>Craimasjien's Mod Pack</Name>
+        <Description>This mod attempts to fix all my frustrations with the UI as it launched in the
+            Advanced Access period leading up to the public launch.</Description>
+        <Authors>Craimasjien</Authors>
+        <Package>Mod</Package>
+        <AffectsSavedGames>0</AffectsSavedGames>
+    </Properties>
+    <Dependencies>
+    </Dependencies>
+    <References>
+        <Mod id="core" title="LOC_MODULE_CORE_NAME" />
+    </References>
+    <ActionCriteria>
+        <Criteria id="always">
+            <AlwaysMet />
+        </Criteria>
+    </ActionCriteria>
+    <ActionGroups>
+        <ActionGroup id="craimasjien-mod-pack-game" scope="game" criteria="always">
+            <Actions>
+                <UpdateText>
+                    <Item>text/en_us/ModuleText.xml</Item>
+                </UpdateText>
+                <ImportFiles>
+                    <Item>ui/tooltips/plot-tooltip.js</Item>
+                    <Item>ui/place-building/model-place-building.js</Item>
+                    <Item>ui/place-building/panel-place-building.js</Item>
+                </ImportFiles>
+            </Actions>
+        </ActionGroup>
+    </ActionGroups>
+</Mod>
