@@ -14,11 +14,7 @@ jobs:
 
       - name: Get Tag Name
         run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
-      - name: Extract Relevant Release Notes
-        run: |
-          awk "/# Release $TAG_NAME/,/^# Release /{if (!/^# Release / || NR==1) print}" RELEASE_NOTES.md | sed '$d' > filtered_release_notes.md
-          
+       
       - name: Create ZIP Archive
         run: |
           zip -r craimasjiens-civ-vii-mod-pack-${TAG_NAME}.zip "Craimasjien's Mod Pack.modinfo" text/ ui/
@@ -34,5 +30,5 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           name: Release ${{ env.TAG_NAME }}
-          body_path: filtered_release_notes.md
+          body_path: RELEASE_NOTES.md
           files: craimasjiens-civ-vii-mod-pack-${{ env.TAG_NAME }}.zip
