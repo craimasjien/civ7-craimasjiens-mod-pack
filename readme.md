@@ -11,7 +11,7 @@ Feel free to request features and I will attempt to implement them as best I can
 2. Open the corresponding mods folder
     1. Windows: `%localappdata%\Firaxis Games\Sid Meier's Civilization VII\Mods`
     2. MacOS: `~/Library/Application Support/Civilization VII/Mods`
-3. Extract the zip file and move the 
+3. Extract the zip file and move the folder into the `Mods` folder.
 
 
 ## Roadmap / Wishlist
