@@ -6,6 +6,14 @@ Feel free to request features and I will attempt to implement them as best I can
 ## Features
 - Added an overview of a tile’s base yields, which are lost when upgrading the tile to an urban district. This is especially useful when removing an existing rural improvement, such as a farm. ![base yields about to be removed](screenshots/BaseYields.png "Base Yields")
 
+## Installation Instructions
+1. Download the [latest release](https://github.com/craimasjien/civ7-craimasjiens-mod-pack/releases/latest)
+2. Open the corresponding mods folder
+    1. Windows: `%localappdata%\Firaxis Games\Sid Meier's Civilization VII\Mods`
+    2. MacOS: `~/Library/Application Support/Civilization VII/Mods`
+3. Extract the zip file and move the 
+
+
 ## Roadmap / Wishlist
 - Work in progress
 
