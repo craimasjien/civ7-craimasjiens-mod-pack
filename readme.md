@@ -4,7 +4,7 @@ This pack is my on-going attempt to fix all the things I don't like about the va
 Feel free to request features and I will attempt to implement them as best I can.
 
 ## Features
-- Added an overview of a tile’s base yields, which are lost when upgrading the tile to an urban district. This is especially useful when removing an existing rural improvement, such as a farm. ![base yields about to be removed](screenshots/BaseYields.jpg "Base Yields")
+- Added an overview of a tile’s base yields, which are lost when upgrading the tile to an urban district. This is especially useful when removing an existing rural improvement, such as a farm. ![base yields about to be removed](screenshots/BaseYields.png "Base Yields")
 
 ## Roadmap / Wishlist
 - Work in progress
