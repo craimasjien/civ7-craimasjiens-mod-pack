@@ -240,14 +240,14 @@ class PlaceBuildingModel {
                 const plotHasCity = this.getPlotHasCity(location, playerID);
 
                 if (!plotHasCity) {
-                    GameInfo.Yields.forEach(yield => {
-                        const yieldAmount = GameplayMap.getYield(location.x, location.y, yield.YieldType, playerID);
+                    GameInfo.Yields.forEach(aYield => { // for some reason calling this variable 'yield' breaks the UI.
+                        const yieldAmount = GameplayMap.getYield(location.x, location.y, aYield.YieldType, playerID);
                         if (yieldAmount > 0) {
-                            this.baseYieldPenalty.push(Locale.stylize('LOC_BUILDING_PLACEMENT_YIELD', yieldAmount, Locale.compose(yield.Name)));
+                            this.baseYieldPenalty.push(Locale.stylize('LOC_BUILDING_PLACEMENT_YIELD', yieldAmount, Locale.compose(aYield.Name)));
                         }
                     });
-                    this.shouldShowBaseYieldPenalty = this.baseYieldPenalty.length > 0;
                 }
+                this.shouldShowBaseYieldPenalty = this.baseYieldPenalty.length > 0;
             }
             else {
                 this.selectedConstructibleInfo.details = [];
@@ -257,6 +257,7 @@ class PlaceBuildingModel {
                 this.shouldShowAdjacencyBonuses = false;
                 this.shouldShowOverbuild = false;
                 this.shouldShowUniqueQuarterText = false;
+                this.shouldShowBaseYieldPenalty = false;
                 this.selectPlotMessage = Locale.compose('LOC_UI_CITY_VIEW_SELECT_A_PLOT', this.selectedConstructibleInfo.name);
             }
             if (this._OnUpdate) {

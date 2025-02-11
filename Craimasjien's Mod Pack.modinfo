@@ -5,8 +5,9 @@
         <Name>LOC_CRAI_CMP_MOD_NAME</Name>
         <Description>LOC_CRAI_CMP_MOD_DESCRIPTION</Description>
         <Authors>Craimasjien</Authors>
-        <Package>CraimasjiensModPack</Package>
+        <Package>Mod</Package>
         <ShowInBrowser>1</ShowInBrowser>
+        <AffectsSavedGames>0</AffectsSavedGames>
     </Properties>
     <Dependencies>
     </Dependencies>
@@ -29,13 +30,6 @@
                     <Item>ui/place-building/model-place-building.js</Item>
                     <Item>ui/place-building/panel-place-building.js</Item>
                 </ImportFiles>
-            </Actions>
-        </ActionGroup>
-        <ActionGroup id="craimasjien-mod-pack-shell" scope="shell" criteria="always">
-            <Actions>
-                <UpdateText>
-                    <Item>text/en_us/ModuleText.xml</Item>
-                </UpdateText>
             </Actions>
         </ActionGroup>
     </ActionGroups>
