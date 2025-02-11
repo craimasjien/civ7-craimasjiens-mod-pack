@@ -14,10 +14,15 @@ jobs:
 
       - name: Get Tag Name
         run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Prepare files for zipping
+        run: |
+          mkdir -p craimasjiens-mod-pack
+          cp -r "Craimasjien's Mod Pack.modinfo" text/ ui/
        
       - name: Create ZIP Archive
         run: |
-          zip -r craimasjiens-civ-vii-mod-pack-${TAG_NAME}.zip "Craimasjien's Mod Pack.modinfo" text/ ui/
+          zip -r craimasjiens-civ-vii-mod-pack-${TAG_NAME}.zip craimasjiens-mod-pack/
 
       - name: Upload ZIP as Artifact
         uses: actions/upload-artifact@v4
