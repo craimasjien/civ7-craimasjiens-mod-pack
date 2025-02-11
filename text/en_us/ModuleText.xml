@@ -14,7 +14,7 @@
 		<Row Tag="LOC_CRAI_CMP_MOD_DESCRIPTION">
 			<Text>This pack is my ongoing attempt to fix everything I dislike about the vanilla
 				Civilization VII experience. Feel free to request features, and I'll do my best to
-				implement them.</Text>
+				implement them. For more information check out the mod's GitHub page: https://github.com/craimasjien/civ7-craimasjiens-mod-pack</Text>
 		</Row>
 	</EnglishText>
 </Database>

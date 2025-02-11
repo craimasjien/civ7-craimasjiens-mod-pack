@@ -5,8 +5,8 @@
         <Name>LOC_CRAI_CMP_MOD_NAME</Name>
         <Description>LOC_CRAI_CMP_MOD_DESCRIPTION</Description>
         <Authors>Craimasjien</Authors>
-        <Package>Mod</Package>
-        <AffectsSavedGames>0</AffectsSavedGames>
+        <Package>CraimasjiensModPack</Package>
+        <ShowInBrowser>1</ShowInBrowser>
     </Properties>
     <Dependencies>
     </Dependencies>
@@ -31,5 +31,15 @@
                 </ImportFiles>
             </Actions>
         </ActionGroup>
+        <ActionGroup id="craimasjien-mod-pack-shell" scope="shell" criteria="always">
+            <Actions>
+                <UpdateText>
+                    <Item>text/en_us/ModuleText.xml</Item>
+                </UpdateText>
+            </Actions>
+        </ActionGroup>
     </ActionGroups>
+    <LocalizedText>
+        <File>text/en_us/ModuleText.xml</File>
+    </LocalizedText>
 </Mod>
