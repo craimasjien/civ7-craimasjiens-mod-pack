@@ -4,7 +4,7 @@ This pack is my on-going attempt to fix all the things I don't like about the va
 Feel free to request features and I will attempt to implement them as best I can.
 
 ## Features
-- Added an overview of the base yields of a tile that will be removed once the tile is upgraded to an urban district. ![base yields about to be removed](screenshots/BaseYields.jpg "Base Yields")
+- Added an overview of a tile’s base yields, which are lost when upgrading the tile to an urban district. This is especially useful when removing an existing rural improvement, such as a farm. ![base yields about to be removed](screenshots/BaseYields.jpg "Base Yields")
 
 ## Roadmap / Wishlist
 - Work in progress
@@ -12,7 +12,7 @@ Feel free to request features and I will attempt to implement them as best I can
 ## Abouts
 
 ### About me
-I'm Bryan, a 33 year old engineering manager at a SaaS company. I used to be a developer (mobile apps, web apps, REST APIs) before I started my career as a manager. I still love fiddling around with code from now and then.
+I'm Bryan, a 33-year-old engineering manager at a SaaS company. Before transitioning into management, I worked as a developer, building mobile apps, web apps, and REST APIs. I still enjoy tinkering with code from time to time.
 
 ### About the mod
-This mod was born from my dissatisfaction with the state the game launched in. A friend of mine and myself found ourselves frustrated with seemingly little oversights by Firaxis. When I found out the stack for modding was built around HTML, CSS and JavaScript I decided that I could probably fix the things I don't like, and help the community in the process.
+This mod was born out of my dissatisfaction with the state of the game at launch. A friend and I found ourselves frustrated by what seemed like minor oversights by Firaxis. When I discovered that the modding framework was built around HTML, CSS, and JavaScript, I realized I could probably fix the things I didn't like—and help the community in the process.
