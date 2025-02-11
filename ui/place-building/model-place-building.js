@@ -239,6 +239,11 @@ class PlaceBuildingModel {
                 const playerID = GameContext.localPlayerID;
                 const plotHasCity = this.getPlotHasCity(location, playerID);
 
+                var isUrbanPlot = false;
+                if (selectedDistrict) {
+                    isUrbanPlot = selectedDistrict.isUrbanCore;
+                }
+                
                 if (!plotHasCity) {
                     GameInfo.Yields.forEach(aYield => { // for some reason calling this variable 'yield' breaks the UI.
                         const yieldAmount = GameplayMap.getYield(location.x, location.y, aYield.YieldType, playerID);
@@ -247,7 +252,7 @@ class PlaceBuildingModel {
                         }
                     });
                 }
-                this.shouldShowBaseYieldPenalty = this.baseYieldPenalty.length > 0;
+                this.shouldShowBaseYieldPenalty = (this.baseYieldPenalty.length > 0 && !isUrbanPlot);
             }
             else {
                 this.selectedConstructibleInfo.details = [];
