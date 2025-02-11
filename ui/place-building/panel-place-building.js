@@ -115,11 +115,11 @@ class PlaceBuildingPanel extends Panel {
 						</div>
 					</div>
 				</div>
-                <div class="flex flex-col self-center items-center" data-bind-if="{{g_PlaceBuilding.shouldShowBaseYieldLosses}}">
-					<div class="my-2 font-title uppercase text-gradient-secondary" data-l10n-id="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_LOSS_WARNING"></div>
-                    <div class="my-2" data-l10n-id="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_LOSS_DESCRIPTION"></div>
+                <div class="flex flex-col self-center items-center" data-bind-if="{{g_PlaceBuilding.shouldShowBaseYieldPenalty}}">
+					<div class="my-2 font-title uppercase text-gradient-secondary" data-l10n-id="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_PENALTY_WARNING"></div>
+                    <div class="my-2" data-l10n-id="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_PENALTY_DESCRIPTION"></div>
                     <div class="flex flex-col mx-2">
- 						<div data-bind-for="entry:{{g_PlaceBuilding.baseYieldLoss}}">
+ 						<div data-bind-for="entry:{{g_PlaceBuilding.baseYieldPenalty}}">
 							<div data-bind-attr-data-l10n-id="{{entry}}"></div>
 						</div>
                     </div>

@@ -67,8 +67,8 @@ class PlaceBuildingModel {
         this.adjacencyBonuses = [];
         this.warehouseBonuses = [];
         this.placementHeaderText = "";
-        this.shouldShowBaseYieldLosses = false;
-        this.baseYieldLoss = [];
+        this.shouldShowBaseYieldPenalty = false;
+        this.baseYieldPenalty = [];
         this.selectedPlotIndex = null;
         this.updateGate = new UpdateGate(() => {
             const constructibleDef = BuildingPlacementManager.currentConstructible;
@@ -233,20 +233,20 @@ class PlaceBuildingModel {
                         description: Locale.compose("LOC_BUILDING_PLACEMENT_WAREHOUSE_BONUS", data.name)
                     });
                 });
-                // Yield loss from converting to urban
-                this.baseYieldLoss = [];
+                // Yield Penalties from converting to urban
+                this.baseYieldPenalty = [];
                 const location = GameplayMap.getLocationFromIndex(this.selectedPlotIndex);
                 const playerID = GameContext.localPlayerID;
                 const plotHasCity = this.getPlotHasCity(location, playerID);
 
                 if (!plotHasCity) {
-                    GameInfo.Yields.forEach(yield_define => {
-                        const yield_amount = GameplayMap.getYield(location.x, location.y, yield_define.YieldType, playerID);
-                        if (yield_amount > 0) {
-                            this.baseYieldLoss.push(Locale.stylize('LOC_BUILDING_PLACEMENT_YIELD', yield_amount, Locale.compose(yield_define.Name)));
+                    GameInfo.Yields.forEach(yield => {
+                        const yieldAmount = GameplayMap.getYield(location.x, location.y, yield.YieldType, playerID);
+                        if (yieldAmount > 0) {
+                            this.baseYieldPenalty.push(Locale.stylize('LOC_BUILDING_PLACEMENT_YIELD', yieldAmount, Locale.compose(yield.Name)));
                         }
                     });
-                    this.shouldShowBaseYieldLosses = this.baseYieldLoss.length > 0;
+                    this.shouldShowBaseYieldPenalty = this.baseYieldPenalty.length > 0;
                 }
             }
             else {

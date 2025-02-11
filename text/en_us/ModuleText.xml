@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
 	<EnglishText>
-		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_LOSS_WARNING">
+		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_PENALTY_WARNING">
 			<Text>Base Yield Loss</Text>
 		</Row>
-		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_LOSS_DESCRIPTION">
+		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_PENALTY_DESCRIPTION">
 			<Text>Converting this tile to an Urban tile will remove the following base yield from
 				it:</Text>
 		</Row>
