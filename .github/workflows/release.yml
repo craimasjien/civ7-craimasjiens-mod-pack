@@ -21,7 +21,7 @@ jobs:
 
       - name: Create ZIP Archive
         run: |
-          zip -r release-${TAG_NAME}.zip file1.txt file2.txt folder1/
+          zip -r release-${TAG_NAME}.zip "Craimasjien's Mod Pack.modinfo" text/ ui/
 
       - name: Upload ZIP as Artifact
         uses: actions/upload-artifact@v4
