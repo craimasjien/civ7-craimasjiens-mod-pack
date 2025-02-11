@@ -5,7 +5,16 @@
 			<Text>Base Yield Loss</Text>
 		</Row>
 		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_LOSS_DESCRIPTION">
-			<Text>Converting this tile to an Urban tile will remove the following base yield from it:</Text>
+			<Text>Converting this tile to an Urban tile will remove the following base yield from
+				it:</Text>
+		</Row>
+		<Row Tag="LOC_CRAI_CMP_MOD_NAME">
+			<Text>Craimasjien's Mod Pack</Text>
+		</Row>
+		<Row Tag="LOC_CRAI_CMP_MOD_DESCRIPTION">
+			<Text>This pack is my ongoing attempt to fix everything I dislike about the vanilla
+				Civilization VII experience. Feel free to request features, and I'll do my best to
+				implement them.</Text>
 		</Row>
 	</EnglishText>
 </Database>

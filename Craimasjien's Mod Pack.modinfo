@@ -2,9 +2,8 @@
 <Mod id="craimasjiens_mod_pack" version="1"
     xmlns="ModInfo">
     <Properties>
-        <Name>Craimasjien's Mod Pack</Name>
-        <Description>This mod attempts to fix all my frustrations with the UI as it launched in the
-            Advanced Access period leading up to the public launch.</Description>
+        <Name>LOC_CRAI_CMP_MOD_NAME</Name>
+        <Description>LOC_CRAI_CMP_MOD_DESCRIPTION</Description>
         <Authors>Craimasjien</Authors>
         <Package>Mod</Package>
         <AffectsSavedGames>0</AffectsSavedGames>
