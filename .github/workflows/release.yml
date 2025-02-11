@@ -17,17 +17,17 @@ jobs:
 
       - name: Extract Relevant Release Notes
         run: |
-          awk "/# Release $TAG_NAME/,/^# Release /{if (!/^# Release / || NR==1) print}" RELEASE_NOTES.md > filtered_release_notes.md
-
+          awk "/# Release $TAG_NAME/,/^# Release /{if (!/^# Release / || NR==1) print}" RELEASE_NOTES.md | sed '$d' > filtered_release_notes.md
+          
       - name: Create ZIP Archive
         run: |
-          zip -r release-${TAG_NAME}.zip "Craimasjien's Mod Pack.modinfo" text/ ui/
+          zip -r craimasjiens-civ-vii-mod-pack-${TAG_NAME}.zip "Craimasjien's Mod Pack.modinfo" text/ ui/
 
       - name: Upload ZIP as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: release-${{ env.TAG_NAME }}
-          path: release-${{ env.TAG_NAME }}.zip
+          name: craimasjiens-civ-vii-mod-pack-${{ env.TAG_NAME }}
+          path: craimasjiens-civ-vii-mod-pack-${{ env.TAG_NAME }}.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
@@ -35,4 +35,4 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           name: Release ${{ env.TAG_NAME }}
           body_path: filtered_release_notes.md
-          files: release-${{ env.TAG_NAME }}.zip
+          files: craimasjiens-civ-vii-mod-pack-${{ env.TAG_NAME }}.zip
