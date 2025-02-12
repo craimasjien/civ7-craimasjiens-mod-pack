@@ -4,7 +4,8 @@ This pack is my on-going attempt to fix all the things I don't like about the va
 Feel free to request features and I will attempt to implement them as best I can.
 
 ## Features
-- Added an overview of a tile’s base yields, which are lost when upgrading the tile to an urban district. This is especially useful when removing an existing rural improvement, such as a farm. ![base yields about to be removed](screenshots/BaseYields.png "Base Yields")
+- Added an overview of a tile’s base yields, which are lost when upgrading the tile to an urban district. This is especially useful when removing an existing rural improvement, such as a farm.
+- A Religion lens, which shows you on the tiles which cities have been converted to a religion.
 
 ## Installation Instructions
 1. Download the [latest release](https://github.com/craimasjien/civ7-craimasjiens-mod-pack/releases/latest)
@@ -13,9 +14,15 @@ Feel free to request features and I will attempt to implement them as best I can
     2. MacOS: `~/Library/Application Support/Civilization VII/Mods`
 3. Extract the zip file and move the folder into the `Mods` folder.
 
-
 ## Roadmap / Wishlist
-- Work in progress
+- Religion lens improvements
+  - Like the on Continents layer, I want to show a panel of the available religions (a legend) and their corresponding colors, so it's easier to recognize the religion.
+
+
+## Screenshots
+![base yields about to be removed](screenshots/BaseYields.png "Base Yields")
+![ReligionLayer](screenshots/ReligionLayer.png "Religion Layer")
+![lens selection](screenshots/LensSelection.png "Lens selection")
 
 ## Abouts
 
