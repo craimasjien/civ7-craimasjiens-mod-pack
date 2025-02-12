@@ -6,13 +6,11 @@ class ReligionLensLayer {
     constructor() {
         this.religionOverlayGroup = WorldUI.createOverlayGroup("ReligionOverlayGroup", 1);
         this.religionOverlay = this.religionOverlayGroup.addPlotOverlay();
-        this.religionPlots = [];
     }
 
     clearOverlay() {
         this.religionOverlayGroup.clearAll();
         this.religionOverlay.clear();
-        this.religionPlots = [];
     }
 
     initLayer() {
@@ -48,10 +46,18 @@ class ReligionLensLayer {
 
             console.error(JSON.stringify(plotLocations));
     
-            religionsPlotsMap.set(religion.ReligionType, plotLocations);
+            // If the religion is already in the map, add the new plots to the existing ones
+            if (religionsPlotsMap.has(religion.ReligionType)) {
+                const existingPlots = religionsPlotsMap.get(religion.ReligionType);
+                religionsPlotsMap.set(religion.ReligionType, [...existingPlots, ...plotLocations]);
+            } else {
+                // If it's not in the map, create a new entry for the religion
+                religionsPlotsMap.set(religion.ReligionType, plotLocations);
+            }
         });
     
         religionsPlotsMap.forEach((plots, religionType) => {
+            console.error(religionType + "= " + JSON.stringify(plots));
             this.religionOverlay.addPlots(plots, { fillColor: ReligionColors[religionType] });
         });
     }   
