@@ -1,10 +1,11 @@
 
-export function getCityOnPlot(location) {
-
+export function getCityForPlot(location) {
+    return Cities.getAtLocation(location);
 }
 
-export function getPlotHasCity(location, playerID) {
-    const thisCity = Cities.getAtLocation(location);
+export function getPlotHasCity(location) {
+    console.error(JSON.stringify(location));
+    const thisCity = getCityForPlot(location);
 
     if (thisCity.location.x == location.x && thisCity.location.y == location.y) {
         return true;

@@ -239,7 +239,7 @@ class PlaceBuildingModel {
                 this.baseYieldPenalty = [];
                 const location = GameplayMap.getLocationFromIndex(this.selectedPlotIndex);
                 const playerID = GameContext.localPlayerID;
-                const plotHasCity = getPlotHasCity(location, playerID);
+                const plotHasCity = getPlotHasCity(location);
 
                 var isUrbanPlot = false;
                 if (selectedDistrict) {
