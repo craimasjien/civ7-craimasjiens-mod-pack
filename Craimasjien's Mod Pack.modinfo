@@ -26,6 +26,7 @@
                     <Item>text/en_us/ModuleText.xml</Item>
                 </UpdateText>
                 <ImportFiles>
+                    <Item>ui/interface-modes/interface-mode-unit-selected.js</Item>
                     <Item>ui/place-building/model-place-building.js</Item>
                     <Item>ui/place-building/panel-place-building.js</Item>
                     <Item>ui/mini-map/panel-mini-map.js</Item>

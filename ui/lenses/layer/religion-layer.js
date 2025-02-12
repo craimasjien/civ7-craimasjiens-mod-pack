@@ -35,17 +35,13 @@ class ReligionLensLayer {
         cities.forEach(city => {
             const religion = this.getReligionForCity(city);
             if (!religion) return;
-            
-            console.error("City "+ city.name + " has major religion " + religion.Name);
-    
+                
             religions.set(religion.ReligionType, religion);
 
             const plotLocations = city.getPurchasedPlots().map(plotIndex =>
                 GameplayMap.getLocationFromIndex(plotIndex)
             );
 
-            console.error(JSON.stringify(plotLocations));
-    
             // If the religion is already in the map, add the new plots to the existing ones
             if (religionsPlotsMap.has(religion.ReligionType)) {
                 const existingPlots = religionsPlotsMap.get(religion.ReligionType);
@@ -57,7 +53,6 @@ class ReligionLensLayer {
         });
     
         religionsPlotsMap.forEach((plots, religionType) => {
-            console.error(religionType + "= " + JSON.stringify(plots));
             this.religionOverlay.addPlots(plots, { fillColor: ReligionColors[religionType] });
         });
     }   
