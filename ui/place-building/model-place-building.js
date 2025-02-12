@@ -7,6 +7,8 @@ import BuildingPlacementManager, { BuildingPlacementSelectedPlotChangedEventName
 import CityYields from '/base-standard/ui/utilities/utilities-city-yields.js';
 import { composeConstructibleDescription } from '/core/ui/utilities/utilities-core-textprovider.js';
 import UpdateGate from '/core/ui/utilities/utilities-update-gate.js';
+import { getPlotHasCity } from '/craimasjiens-mod-pack/utilities/craimasjiens-utils.js';
+
 var ConstructibleIcons;
 (function (ConstructibleIcons) {
     ConstructibleIcons["EMPTY"] = "BUILDING_OPEN";
@@ -237,7 +239,7 @@ class PlaceBuildingModel {
                 this.baseYieldPenalty = [];
                 const location = GameplayMap.getLocationFromIndex(this.selectedPlotIndex);
                 const playerID = GameContext.localPlayerID;
-                const plotHasCity = this.getPlotHasCity(location, playerID);
+                const plotHasCity = getPlotHasCity(location, playerID);
 
                 var isUrbanPlot = false;
                 if (selectedDistrict) {
@@ -321,20 +323,6 @@ class PlaceBuildingModel {
             console.error(`model-place-building: Failed to get constructible for id ${constructibleID}`);
         }
         return constructibleInfo;
-    }
-    getPlotHasCity(location, playerID) {
-        const player = Players.get(playerID);
-        const playerCities = player.Cities;
-
-        for (const cityID of playerCities.getCityIds()) {
-            const city = Cities.get(cityID);
-
-            if (city.location.x == location.x && city.location.y == location.y) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
 const PlaceBuilding = new PlaceBuildingModel();

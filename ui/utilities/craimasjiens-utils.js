@@ -11,20 +11,6 @@ export function getPlotHasCity(location, playerID) {
     }
 
     return false;
-
-
-    const player = Players.get(playerID);
-    const playerCities = player.Cities;
-
-    for (const cityID of playerCities.getCityIds()) {
-        const city = Cities.get(cityID);
-
-        if (city.location.x == location.x && city.location.y == location.y) {
-            return true;
-        }
-    }
-
-    return false;
 }
 
 export const HexToFloat4 = (hex, alpha = 1) => {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="craimasjiens_mod_pack" version="1"
+<Mod id="craimasjiens-mod-pack" version="1"
     xmlns="ModInfo">
     <Properties>
         <Name>LOC_CRAI_CMP_MOD_NAME</Name>
@@ -26,10 +26,15 @@
                     <Item>text/en_us/ModuleText.xml</Item>
                 </UpdateText>
                 <ImportFiles>
-                    <Item>ui/tooltips/plot-tooltip.js</Item>
                     <Item>ui/place-building/model-place-building.js</Item>
                     <Item>ui/place-building/panel-place-building.js</Item>
+                    <Item>ui/mini-map/panel-mini-map.js</Item>
+                    <Item>ui/utilities/craimasjiens-utils.js</Item>
                 </ImportFiles>
+                <UIScripts>
+                    <Item>ui/lenses/layer/religion-layer.js</Item>
+                    <Item>ui/lenses/lens/religion-lens.js</Item>
+                </UIScripts>
             </Actions>
         </ActionGroup>
     </ActionGroups>
