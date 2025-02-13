@@ -31,6 +31,7 @@
                     <Item>ui/place-building/panel-place-building.js</Item>
                     <Item>ui/mini-map/panel-mini-map.js</Item>
                     <Item>ui/utilities/craimasjiens-utils.js</Item>
+                    <Item>ui/utilities/bryan.js</Item>
                 </ImportFiles>
                 <UIScripts>
                     <Item>ui/lenses/layer/religion-layer.js</Item>
