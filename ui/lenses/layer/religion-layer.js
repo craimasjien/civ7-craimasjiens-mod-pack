@@ -1,6 +1,6 @@
 import LensManager from '/core/ui/lenses/lens-manager.js';
 
-import { ReligionColors } from '/craimasjiens-mod-pack/utilities/craimasjiens-utils.js';
+import { ReligionColors, HexToFloat4 } from '/craimasjiens-mod-pack/ui/utils/craimasjiens-utils.js';
 
 class ReligionLensLayer {
     constructor() {
@@ -18,51 +18,50 @@ class ReligionLensLayer {
 
     applyLayer() {
         this.clearOverlay();
-    
+
+        const religions = new Map();
+        const revealedPlots = [];
+        const religionsPlotsMap = new Map();
+
         const width = GameplayMap.getGridWidth();
         const height = GameplayMap.getGridHeight();
-    
+
+        for (let x = 0; x < width; x++) {
+            for (let y = 0; y < height; y++) {
+                const revealedState = GameplayMap.getRevealedState(GameContext.localPlayerID, x, y);
+                if (revealedState != RevealedStates.HIDDEN) {
+                    revealedPlots.push(GameplayMap.getIndexFromXY(x, y));
+                }
+            }
+        }
+
         const cities = Array.from({ length: width }, (_, x) =>
             Array.from({ length: height }, (_, y) => Cities.getAtLocation({ x, y }))
-        )
-        .flat()
-        .filter(Boolean)
-        .filter((value, index, self) => self.indexOf(value) === index);
-    
-        const religions = new Map();
-        const religionsPlotsMap = new Map();
-    
+        ).flat().filter(Boolean).filter((value, index, self) => self.indexOf(value) === index);
+
         cities.forEach(city => {
-            const religion = this.getReligionForCity(city);
+            const religion = GameInfo.Religions.find(t => t.$hash == city.Religion?.majorityReligion);
             if (!religion) return;
-                
-            religions.set(religion.ReligionType, religion);
 
-            const plotLocations = city.getPurchasedPlots().map(plotIndex =>
-                GameplayMap.getLocationFromIndex(plotIndex)
-            );
+            religions.set(religion.ReligionType, { religion: religion, city: city });
+            const plotLocations = city.getPurchasedPlots();
 
-            // If the religion is already in the map, add the new plots to the existing ones
             if (religionsPlotsMap.has(religion.ReligionType)) {
                 const existingPlots = religionsPlotsMap.get(religion.ReligionType);
                 religionsPlotsMap.set(religion.ReligionType, [...existingPlots, ...plotLocations]);
             } else {
-                // If it's not in the map, create a new entry for the religion
                 religionsPlotsMap.set(religion.ReligionType, plotLocations);
             }
         });
-    
-        religionsPlotsMap.forEach((plots, religionType) => {
-            this.religionOverlay.addPlots(plots, { fillColor: ReligionColors[religionType] });
-        });
-    }   
+
+        for (const [religionType, plots] of religionsPlotsMap) {
+            const filteredPlots = [...plots].filter(plot => revealedPlots.includes(plot));
+            this.religionOverlay.addPlots(filteredPlots, { fillColor: HexToFloat4(ReligionColors[religionType]) });
+        }
+    }
     
     removeLayer() {
         this.clearOverlay();
-    }
-
-    getReligionForCity(aCity) {
-        return GameInfo.Religions.find(t => t.$hash == aCity.Religion?.majorityReligion);
     }
 }
 LensManager.registerLensLayer('cmp-religion-layer', new ReligionLensLayer());
