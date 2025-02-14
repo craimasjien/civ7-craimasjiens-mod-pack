@@ -1,5 +1,8 @@
 Civilization VII Events
 
+Created as a personal reference because information is pretty fragmented at the time of writing.
+Credits go to CivFanatics member [WildW](https://forums.civfanatics.com/members/wildw.338987/) for dumping all this. Original [CivFanatics thread](https://forums.civfanatics.com/threads/scripting-runtime-information.695101).
+
 - GameCoreEvents
   - AdvancedStartCardAdded
   - AdvancedStartCardRemoved
