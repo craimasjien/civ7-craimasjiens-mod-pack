@@ -29,13 +29,13 @@
                     <Item>ui/interface-modes/interface-mode-unit-selected.js</Item>
                     <Item>ui/place-building/model-place-building.js</Item>
                     <Item>ui/place-building/panel-place-building.js</Item>
-                    <Item>ui/mini-map/panel-mini-map.js</Item>
                     <Item>ui/utilities/craimasjiens-utils.js</Item>
-                    <Item>ui/utilities/bryan.js</Item>
                 </ImportFiles>
                 <UIScripts>
                     <Item>ui/lenses/layer/religion-layer.js</Item>
                     <Item>ui/lenses/lens/religion-lens.js</Item>
+                    <Item>ui/utilities/cmp-panel-mini-map.js</Item>
+                    <Item>ui/utilities/cmp-singleton-test.js</Item>
                 </UIScripts>
             </Actions>
         </ActionGroup>

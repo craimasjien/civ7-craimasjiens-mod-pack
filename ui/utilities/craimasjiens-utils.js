@@ -47,4 +47,3 @@ export var ReligionColors;
     ReligionColors[ReligionColors["RELIGION_CUSTOM_11"] = 0x708090] = "RELIGION_CUSTOM_11";      // Slate Gray
     ReligionColors[ReligionColors["RELIGION_CUSTOM_12"] = 0x556B2F] = "RELIGION_CUSTOM_12";      // Dark Olive Green
 })(ReligionColors || (ReligionColors = {}));
-

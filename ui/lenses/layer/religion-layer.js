@@ -1,6 +1,6 @@
 import LensManager from '/core/ui/lenses/lens-manager.js';
 
-import { ReligionColors, HexToFloat4 } from '/craimasjiens-mod-pack/ui/utils/craimasjiens-utils.js';
+import { ReligionColors, HexToFloat4 } from '/craimasjiens-mod-pack/ui/utilities/craimasjiens-utils.js';
 
 class ReligionLensLayer {
     constructor() {
