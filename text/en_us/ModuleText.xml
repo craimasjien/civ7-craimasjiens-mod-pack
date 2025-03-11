@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
 	<EnglishText>
-		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_PENALTY_WARNING">
-			<Text>Base Yield Loss</Text>
-		</Row>
-		<Row Tag="LOC_CRAI_CMP_UI_CITY_VIEW_CONVERT_TO_URBAN_YIELD_PENALTY_DESCRIPTION">
-			<Text>Converting this tile to an Urban tile will remove the following base yield from
-				it:</Text>
-		</Row>
 		<Row Tag="LOC_CRAI_CMP_MOD_NAME">
 			<Text>Craimasjien's Mod Pack</Text>
 		</Row>
 		<Row Tag="LOC_CRAI_CMP_MOD_DESCRIPTION">
 			<Text>This pack is my ongoing attempt to fix everything I dislike about the vanilla
 				Civilization VII experience. Feel free to request features, and I'll do my best to
-				implement them. For more information check out the mod's GitHub page: https://github.com/craimasjien/civ7-craimasjiens-mod-pack</Text>
+				implement them. For more information check out the mod's GitHub page:
+				https://github.com/craimasjien/civ7-craimasjiens-mod-pack</Text>
+		</Row>
+		<Row Tag="LOC_CRAI_CMP_THANKS">
+			<Text>
+				Sukritact, thecrazyscotsman, wltk, et al.
+			</Text>
+		</Row>
+		<Row Tag="LOC_CRAI_CMP_COMPATIBILITY">
+			<Text>
+				Compatible with [B]Sukritact's Simple UI Adjustments[/B], [B]TCS Improved Mod Page[/B] and [B]TCS Improved Plot Tooltip[/B]. I have not had any reports of incompatibilities. Please let me know on the Mod's GitHub page!
+			</Text>
+		</Row>
+		<Row Tag="LOC_CRAI_CMP_URL">
+			<Text>
+				https://github.com/craimasjien/civ7-craimasjiens-mod-pack
+			</Text>
 		</Row>
 	</EnglishText>
 </Database>

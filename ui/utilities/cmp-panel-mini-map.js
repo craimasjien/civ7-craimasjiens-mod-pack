@@ -20,4 +20,4 @@ export class CmpPanelMiniMapDecorator {
     onAttributeChanged(name, prev, next) { }
 }
 
-Controls.decorate('panel-mini-map', (val) => new CmpPanelMiniMapDecorator(val));
+Controls.decorate('lens-panel', (val) => new CmpPanelMiniMapDecorator(val));

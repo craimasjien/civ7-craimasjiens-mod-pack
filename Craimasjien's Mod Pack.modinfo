@@ -8,6 +8,10 @@
         <Package>Mod</Package>
         <ShowInBrowser>1</ShowInBrowser>
         <AffectsSavedGames>0</AffectsSavedGames>
+        <SpecialThanks>LOC_CRAI_CMP_THANKS</SpecialThanks>
+        <Compatibility>LOC_CRAI_CMP_COMPATIBILITY</Compatibility>
+        <URL>LOC_CRAI_CMP_URL</URL>
+        <Version>1.2.0</Version>
     </Properties>
     <Dependencies>
     </Dependencies>
@@ -15,32 +19,47 @@
         <Mod id="core" title="LOC_MODULE_CORE_NAME" />
     </References>
     <ActionCriteria>
+        <Criteria id="exploration-age-current">
+            <AgeInUse>AGE_EXPLORATION</AgeInUse>
+        </Criteria>
         <Criteria id="always">
             <AlwaysMet />
         </Criteria>
     </ActionCriteria>
     <ActionGroups>
-        <ActionGroup id="craimasjien-mod-pack-game" scope="game" criteria="always">
+        <ActionGroup id="craimasjien-mod-pack-shell" scope="shell" criteria="always">
             <Actions>
                 <UpdateText>
                     <Item>text/en_us/ModuleText.xml</Item>
                 </UpdateText>
+            </Actions>
+        </ActionGroup>
+        <ActionGroup id="craimasjien-mod-pack-game" scope="game" criteria="always">
+            <Actions>
+                <UpdateText>
+                    <Item>text/en_us/InGameText.xml</Item>
+                </UpdateText>
                 <ImportFiles>
-                    <Item>ui/interface-modes/interface-mode-unit-selected.js</Item>
                     <Item>ui/place-building/model-place-building.js</Item>
                     <Item>ui/place-building/panel-place-building.js</Item>
                     <Item>ui/utilities/craimasjiens-utils.js</Item>
                 </ImportFiles>
+            </Actions>
+        </ActionGroup>
+        <ActionGroup id="craimasjien-mod-pack-exploration-age-current" scope="game"
+            criteria="exploration-age-current">
+            <Actions>
                 <UIScripts>
                     <Item>ui/lenses/layer/religion-layer.js</Item>
                     <Item>ui/lenses/lens/religion-lens.js</Item>
                     <Item>ui/utilities/cmp-panel-mini-map.js</Item>
-                    <Item>ui/utilities/cmp-singleton-test.js</Item>
+                    <Item>ui/cmp/unit-selection-listener/unit-selection-listener.js</Item>
                 </UIScripts>
             </Actions>
         </ActionGroup>
     </ActionGroups>
     <LocalizedText>
+        <File>text/en_us/InGameText.xml</File>
         <File>text/en_us/ModuleText.xml</File>
     </LocalizedText>
 </Mod>
